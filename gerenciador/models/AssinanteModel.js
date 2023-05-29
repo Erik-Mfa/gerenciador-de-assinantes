@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const assinanteSchema = new mongoose.Schema({
-    id: Number,
     codigo: Number,
     nome: String,
     sobrenome: String,
@@ -13,3 +12,5 @@ const assinanteSchema = new mongoose.Schema({
     status: Boolean,
     imagem: String
 })
+
+module.exports = mongoose.model('assinante', assinanteSchema); 
