@@ -26,6 +26,13 @@ class AssinanteController{
         const resultado = await assinanteModel.findOne({ 'codigo': codigo });
         res.status(200).json(resultado);
     }
+
+    async excluir(req, res) {
+        const codigo = req.params.codigo;
+        const _id = String((await assinanteModel.findOne({ 'codigo': codigo }))._id);
+        await assinanteModel.findByIdAndRemove(String(_id));
+        res.status(200).send();
+    }
 }
 
 module.exports = new AssinanteController;
