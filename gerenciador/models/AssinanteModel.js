@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
-const assinanteSchema = new mongoose.Schema({
+const assinanteSchema = new Schema({
     codigo: Number,
-    nome: String,
+    nome: String,    
     sobrenome: String,
     nascimento: Date,
     telefone: Number,
