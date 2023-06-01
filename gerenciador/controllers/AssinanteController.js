@@ -1,12 +1,20 @@
 const assinanteModel = require('../models/AssinanteModel');
 
 class AssinanteController{
+
     async cadastrar(req, res){
+        
         let assinante = req.body;
+
+        
+        if(req.file){
+            assinante.imagem = req.file.path
+        } 
 
         const resultado = await assinanteModel.create(assinante);
         res.status(201).json(resultado);
         console.log(resultado);
+        
     }
 
     async atualizar(req, res) {

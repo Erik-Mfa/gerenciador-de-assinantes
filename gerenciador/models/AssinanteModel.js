@@ -11,7 +11,9 @@ const assinanteSchema = new Schema({
     cidade: String,
     estado: String,
     status: Boolean,
-    imagem: String
+    imagem: {
+        type: String
+    }
 })
 
 module.exports = mongoose.model('assinante', assinanteSchema); 
